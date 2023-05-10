@@ -90,15 +90,22 @@ function AddBook() {
   SaveBook(bookTitle, bookAuthor, bookCategory);
 }
 
-//function that deletes the selected book from the user's local storage by the book's "id" number
-
+// This function deletes a book from local storage by the provided id, then reloads the library
 function DeleteBook(id) {
+  // get library data from local storage and parse it into JSON array
   const library = JSON.parse(localStorage.getItem("library"));
+
+  // filter the book with provided id
   const filteredLibrary = library.filter((book) => book.id !== id);
+
+  // set the updated library back to the local storage
   localStorage.setItem("library", JSON.stringify(filteredLibrary));
+
+  // reload the library
   ReloadLibrary();
 }
 
+// an object to store predefined book categories
 const categoryDisplay = {
   0: "None",
   1: "Adventure",
@@ -113,19 +120,27 @@ const categoryDisplay = {
   10: "western",
 };
 
+// This function displays a book by cloning a template, updating its HTML content with the provided book data, and adding a delete button listener that calls DeleteBook() function if clicked
 function DisplayBook(book) {
+  // get the HTML template and clone it
   const clon = temp.content.cloneNode(true);
+
+  // get the book category text from categoryDisplay object
   const categoryText = categoryDisplay[book.category];
 
+  // update the book template content with provided book data
   clon.querySelectorAll("h2")[0].innerHTML = "BOOK NAME: " + book.title;
   clon.querySelectorAll("p")[0].innerHTML = "AUTHOR: " + book.author;
   clon.querySelectorAll("p")[1].innerHTML = "CATEGORY:" + categoryText;
 
+  // add a listener to the delete button that calls DeleteBook() function with book id
   clon.querySelector("button").addEventListener("click", () => {
     DeleteBook(book.id);
   });
 
+  // add the cloned book template to the bookshelf
   bookshelf.appendChild(clon);
 }
 
+// reload the library
 ReloadLibrary();
