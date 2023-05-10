@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bookstore</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-logo">
+          <h1 class="logo">Bookstore</h1>
+        </div>
+        <ul class="menu">
+          <li class="menu-item">
+            <a class="active" href="#">
+              <button
+                class="active-link-btn"
+                type="button
+                        "
+              >
+                Books
+              </button>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="active" href="#">
+              <button
+                class="active-link-btn"
+                type="button
+                        "
+              >
+                Categories
+              </button>
+            </a>
+          </li>
+        </ul>
+        <button class="navbar-style-btn" type="button" style="transform: none">
+          <svg
+            width="800px"
+            height="1em"
+            viewBox="0 0 24 24"
+            fill="#428cc4"
+            xmlns="http://www.w3.org/2000/svg"
+          ></svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="book-container">
+      <div id="bookshelf">
+        <template class="book list-book-container">
+          <h2>Book Title</h2>
+          <p>Book Author</p>
+          <p>Book Category</p>
+          <button class="delete-book-btn">Remove</button>
+          <div class="space"></div>
+        </template>
+      </div>
+    </div>
+
+    <div class="create-books">
+      <h1>Add New Book</h1>
+      <div class="row">
+        <form action="submit" onsubmit="return AddBook()" id="AddBook">
+          <input
+            class="create-new-book-input"
+            type="text"
+            name="title"
+            placeholder="Title of the book..."
+            required=""
+          />
+          <input
+            class="create-new-book-input"
+            type="text"
+            name="author"
+            placeholder="Author of the book..."
+            required=""
+          />
+          <select
+            name="category"
+            id="category"
+            required
+            class="select-category"
+          >
+            <option value="" selected disabled hidden>Choose category</option>
+            <option value="-1">None</option>
+            <option value="1">Adventure</option>
+            <option value="2">Erotic</option>
+            <option value="3">Epistolary</option>
+            <option value="4">Comic</option>
+            <option value="5">Docufiction</option>
+            <option value="6">Crime</option>
+            <option value="7">Superhero</option>
+            <option value="8">Thriller</option>
+            <option value="9">Urban</option>
+            <option value="10">Western</option>
+          </select>
+
+          <button class="add-new-book-btn" type="submit">ADD BOOK</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

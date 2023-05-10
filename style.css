@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fafafa;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.navbar {
+  background-color: #fff;
+  box-shadow: 1px 1px 10px hsla(0, 0%, 50.2%, 0.1);
+  height: 100px;
+  padding: 0 6rem;
+}
+
+.navbar-container,
+.navbar .navbar-container ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  grid-gap: 4rem;
+  gap: 4rem;
+  height: 100%;
+}
+
+.navbar .navbar-logo {
+  font-family: "Montserrat", sans-serif;
+  color: #0290ff;
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+.navbar .navbar-container ul {
+  justify-content: center;
+}
+
+.menu-item {
+  font-family: "Montserrat", sans-serif;
+  list-style: none;
+}
+
+.menu-item .active-link-btn {
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  color: grey;
+  scale: 1;
+  transition: all 0.1s ease-in;
+  letter-spacing: 1.9px;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.navbar .navbar-style-btn {
+  width: 2.813rem;
+  height: 2.813rem;
+  border-radius: 50%;
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
+  margin-left: auto;
+}
+
+.book-container {
+  margin: 6rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 500px;
+}
+
+/* .book-container .list-book-container {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  grid-gap: 1em;
+  gap: 1em;
+} */
+
+.create-books {
+  bottom: 0;
+  border-top: 1px solid hsla(0, 0%, 79.2%, 0.733);
+  margin: 6rem;
+  padding: 2rem 0;
+}
+
+.create-books h1 {
+  font-family: "Montserrat", sans-serif;
+  color: hsla(0, 0%, 53.3%, 0.5333333333333333);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+.create-books form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.create-books form .create-new-book-input {
+  font-family: "Montserrat", sans-serif;
+  padding: 0.5rem;
+  font-size: 1rem;
+  height: 3rem;
+  border-radius: 4px;
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
+  color: #8d8d8d;
+}
+
+.create-books form .select-category {
+  font-family: "Montserrat", sans-serif;
+  padding: 0.5rem;
+  font-size: 1rem;
+  height: 3rem;
+  border-radius: 4px;
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
+  color: #8d8d8d;
+}
+
+.create-books form .add-new-book-btn {
+  font-family: "Roboto Slab", serif;
+  font-size: 0.813rem;
+  font-weight: 700;
+  color: #fff;
+  height: 3rem;
+  background-color: #0290ff;
+  border-radius: 4px;
+  border: none;
+}
+
+.delete-book-btn {
+  font-family: "Roboto Slab", serif;
+  font-size: 0.813rem;
+  font-weight: 700;
+  width: 50%;
+  color: #fff;
+  height: 3rem;
+  background-color: #0290ff;
+  border-radius: 4px;
+  border: none;
+}
+
+#bookshelf {
+  /* padding: 50px; */
+  margin: auto;
+  width: 80%;
+}
+
+.space {
+  height: 40px;
+}
